@@ -1,0 +1,20 @@
+base_url = "https://authentisity.github.io"
+title = "Hankang Li"
+default_language = "en"
+
+compile_sass = false
+build_search_index = false
+generate_feeds = false
+
+[markdown]
+smart_punctuation = true
+
+# Everything in the page header lives here, so identity is edited in one place.
+[extra]
+name = "Hankang Li"
+degree = "B.S. Computer Engineering, expected Jun 2027"
+affiliation = "University of California, Irvine"
+email = "hankang201222@gmail.com"
+github = "https://github.com/authentisity"
+linkedin = "https://www.linkedin.com/in/hank-li-51b626263/"
+resume = "resume.pdf"

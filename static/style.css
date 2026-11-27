@@ -1,0 +1,111 @@
+:root {
+  color-scheme: light dark;
+  --fg: #1a1a1a;
+  --muted: #6a6a6a;
+  --bg: #fdfdfc;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fg: #e4e4e2;
+    --muted: #999;
+    --bg: #171717;
+  }
+}
+
+body {
+  margin: 0 auto;
+  padding: 4rem 1.25rem 6rem;
+  max-width: 36rem;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: system-ui, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+h1 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+h2 {
+  margin: 2.5rem 0 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+h3 {
+  margin: 2rem 0 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+p {
+  margin: 0 0 1rem;
+}
+
+a {
+  color: inherit;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 1px;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+/* Header block: identity lines and the link row under the name. */
+.ident {
+  margin: 0.15rem 0 0;
+  color: var(--muted);
+  font-size: 0.875rem;
+}
+
+.bio {
+  margin-top: 1.75rem;
+}
+
+/* Entry lists: one entry is three stacked lines, no bullet, no card. */
+.entries {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.entries > li {
+  margin-bottom: 1.5rem;
+}
+
+.entries .head {
+  margin: 0;
+}
+
+.entries .title {
+  font-weight: 600;
+}
+
+.meta {
+  margin-left: 0.5rem;
+  white-space: nowrap;
+  color: var(--muted);
+  font-size: 0.8125rem;
+}
+
+.desc {
+  margin: 0.1rem 0 0;
+  text-wrap: pretty;
+}
+
+.artifacts {
+  margin: 0.25rem 0 0;
+  color: var(--muted);
+  font-size: 0.875rem;
+}
+
+code {
+  font-family: ui-monospace, monospace;
+  font-size: 0.9em;
+}

@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block content %}
+<header>
+  <h1>{{ config.extra.name }}</h1>
+  <p class="ident">{{ config.extra.degree }} &middot; {{ config.extra.affiliation }}</p>
+  <p class="ident">
+    <a href="mailto:{{ config.extra.email }}">{{ config.extra.email }}</a> &middot;
+    <a href="{{ config.extra.github }}">github</a> &middot;
+    <a href="{{ config.extra.linkedin }}">linkedin</a> &middot;
+    <a href="{{ get_url(path=config.extra.resume) }}">cv</a>
+  </p>
+</header>
+
+<div class="bio">
+  {{ section.content | safe }}
+</div>
+
+{# Each list is a content section whose front matter holds its entries. One entry is three stacked lines. #}
+{% for path in ["research/_index.md", "experience/_index.md", "projects/_index.md", "other/_index.md"] %}
+{% set list = get_section(path=path) %}
+<h2>{{ list.title }}</h2>
+<ul class="entries">
+  {% for p in list.extra.entries %}
+  <li>
+    <p class="head">
+      <span class="title">{{ p.title }}</span>
+      <span class="meta">{{ p.meta }}</span>
+    </p>
+    <p class="desc">{{ p.description }}</p>
+    {% if p.links %}
+    <p class="artifacts">
+      {%- for l in p.links -%}
+      <a href="{{ l.url }}">{{ l.label }}</a>{% if not loop.last %} &middot; {% endif %}
+      {%- endfor -%}
+    </p>
+    {% endif %}
+  </li>
+  {% endfor %}
+</ul>
+{% endfor %}
+{% endblock content %}
